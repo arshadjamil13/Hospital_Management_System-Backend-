@@ -11,7 +11,12 @@ const AuthRouter = require("./src/routes/Auth.routes")
 
 
 const app= express()
-app.use(cors({ origin: process.env.ORIGIN, credentials: true }))
+app.use(cors({
+  origin: "*",   // allow all domains
+  methods: "GET,POST,PUT,PATCH,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
+}));
+
 app.use(express.json())
 
 connectDB();
