@@ -8,7 +8,7 @@ const BedRouter = require("./src/routes/Bed.routes")
 const OPDRouter = require("./src/routes/OPD.routes")
 const AdmittedPatientRouter = require("./src/routes/AdmittedPatient.routes")
 const AuthRouter = require("./src/routes/Auth.routes")
-
+const Chatbotrouter = require("./src/routes/Chatbot.routes")
 
 const app= express()
 app.use(cors({
@@ -26,6 +26,7 @@ app.use("/api/beds", BedRouter)
 app.use("/api/opd", OPDRouter)
 app.use("/api/admit", AdmittedPatientRouter)
 app.use("/api/auth", AuthRouter)
+app.use("/api/chatbot",Chatbotrouter)
 
 app.listen(process.env.PORT, ()=>{
     console.log("Server Running on port 5000")
